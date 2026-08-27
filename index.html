@@ -22,7 +22,7 @@
 <body>
 <main>
   <h1>Privacy Policy</h1>
-  <p class="meta"><strong>PhishDestroy + FFraud Guard</strong><br>Effective date: 26 August 2026</p>
+  <p class="meta"><strong>PhishDestroy + FFraud Guard</strong><br>Effective date: 27 August 2026</p>
 
   <div class="notice">
     <strong>Summary:</strong> The extension handles website hostnames and, for blocked pages, may store the full blocked URL locally. When live protection is enabled, hostnames and resolved public server IP addresses are sent over HTTPS to the security services identified below. Page text, form contents, passwords, keystrokes, URL paths and query strings are not sent to those services by the extension.
@@ -40,7 +40,8 @@
   <p>If FFraud checking is enabled, the extension asks Cloudflare DNS-over-HTTPS for the hostname's public IPv4 and IPv6 addresses. It may check up to three returned public server IP addresses with FFraud. It excludes local and private-network addresses.</p>
 
   <h3>Settings and security data</h3>
-  <p>The extension stores protection settings, thresholds, feature toggles, the user's domain allowlist, checked and blocked counters, feed metadata, the downloaded PhishDestroy feed, its official allowlist, and short-lived lookup caches locally in Chrome.</p>
+  <p>The extension stores protection settings, thresholds, feature toggles, the user's domain allowlist, checked and blocked counters, per-source feed results, refresh progress, compact-database metadata, the downloaded PhishDestroy Primary, Active Domains, Community, Community Live and Root Domains feeds, the official allowlist, and short-lived lookup caches locally in Chrome.</p>
+  <p>The deduplicated threat data is packed into approximately 1,024 IndexedDB buckets to reduce storage overhead. An upgrade from the earlier per-domain format deletes the obsolete threat store and rebuilds the compact database during the next feed refresh.</p>
 
   <h3>Data the extension does not inspect or transmit</h3>
   <p>The extension does not analyse page text, images or other page content. It does not inspect form contents, passwords, authentication credentials, personal communications or keystrokes. It does not send URL paths or query strings to PhishDestroy, Cloudflare or FFraud.</p>
@@ -51,7 +52,7 @@
     <li><strong>PhishDestroy API:</strong> receives a website hostname when live PhishDestroy fallback is enabled and a live lookup is required.</li>
     <li><strong>Cloudflare DNS-over-HTTPS:</strong> receives a website hostname when FFraud checking is enabled, so the hostname can be resolved to public server IP addresses.</li>
     <li><strong>FFraud:</strong> receives resolved public server IP addresses when FFraud checking is enabled.</li>
-    <li><strong>GitHub:</strong> hosts the public PhishDestroy threat feed and official allowlist downloaded by the extension.</li>
+    <li><strong>GitHub:</strong> hosts the five public PhishDestroy intelligence feeds and official allowlist downloaded by the extension.</li>
   </ul>
   <p>Requests use HTTPS. Like other internet services, these providers necessarily receive connection information such as the user's public IP address and may derive an approximate region from it. Their own logging and retention practices are governed by their respective privacy policies and terms.</p>
   <p>The extension publisher does not sell user data, use it for advertising, build advertising profiles, or transfer it for creditworthiness or lending decisions. Data is used or transferred only to provide and maintain the extension's stated security purpose, for security or abuse prevention, to comply with applicable law, or in another use permitted by Chrome Web Store policy.</p>
@@ -61,7 +62,7 @@
     <li>PhishDestroy live lookup results are cached locally for up to six hours.</li>
     <li>FFraud results are cached locally for up to 30 minutes.</li>
     <li>The local block log retains only the 100 most recent blocked-page records.</li>
-    <li>The downloaded threat feed remains locally until it is replaced by a refresh, Chrome clears extension data, or the extension is removed.</li>
+    <li>The downloaded and deduplicated threat feeds remain locally in the compact database until they are replaced by a refresh, Chrome clears extension data, or the extension is removed.</li>
     <li>Settings, allowlists, counters and feed metadata remain until changed, Chrome clears extension data, or the extension is removed.</li>
   </ul>
 
@@ -82,3 +83,4 @@
 </main>
 </body>
 </html>
+
