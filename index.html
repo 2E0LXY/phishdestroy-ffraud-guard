@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PhishDestroy + FFraud Guard Privacy Policy</title>
+  <style>
+    :root { color-scheme: dark; font-family: Inter, ui-sans-serif, system-ui, sans-serif; }
+    body { margin: 0; background: #08111c; color: #eaf2fb; line-height: 1.65; }
+    main { max-width: 820px; margin: 0 auto; padding: 56px 24px 80px; }
+    h1 { margin: 0 0 8px; font-size: clamp(2rem, 5vw, 3.25rem); line-height: 1.08; }
+    h2 { margin-top: 40px; color: #44dda1; }
+    h3 { margin-top: 26px; }
+    p, li { color: #c8d7e7; }
+    strong { color: #fff; }
+    .meta { color: #8fb3d8; }
+    .notice { margin: 28px 0; padding: 20px 22px; border: 1px solid #294158; border-radius: 14px; background: #111d2b; }
+    a { color: #67e8b6; }
+    code { color: #bcefdc; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Privacy Policy</h1>
+  <p class="meta"><strong>PhishDestroy + FFraud Guard</strong><br>Effective date: 26 August 2026</p>
+
+  <div class="notice">
+    <strong>Summary:</strong> The extension handles website hostnames and, for blocked pages, may store the full blocked URL locally. When live protection is enabled, hostnames and resolved public server IP addresses are sent over HTTPS to the security services identified below. Page text, form contents, passwords, keystrokes, URL paths and query strings are not sent to those services by the extension.
+  </div>
+
+  <h2>1. Purpose</h2>
+  <p>PhishDestroy + FFraud Guard has one purpose: to reduce exposure to known or strongly indicated phishing websites and malicious web infrastructure. It checks top-level HTTP and HTTPS navigation against PhishDestroy domain intelligence and, when enabled, FFraud public-IP reputation. When a configured blocking condition matches, the extension replaces navigation with a local warning page.</p>
+
+  <h2>2. Data the extension handles</h2>
+  <h3>Website hostnames and URLs</h3>
+  <p>The extension reads the current top-level HTTP or HTTPS URL so it can extract the hostname and perform a protection decision. The hostname is web-browsing activity under Chrome Web Store policy.</p>
+  <p>The full URL is used locally to display the requested address on a block page and to return to the address if the user deliberately allows it. For blocked pages, a local record may contain the full URL, hostname, time, score, severity, intelligence source, reason and resolved server IP. The extension keeps no more than 100 of these local block records.</p>
+
+  <h3>Public server IP addresses</h3>
+  <p>If FFraud checking is enabled, the extension asks Cloudflare DNS-over-HTTPS for the hostname's public IPv4 and IPv6 addresses. It may check up to three returned public server IP addresses with FFraud. It excludes local and private-network addresses.</p>
+
+  <h3>Settings and security data</h3>
+  <p>The extension stores protection settings, thresholds, feature toggles, the user's domain allowlist, checked and blocked counters, feed metadata, the downloaded PhishDestroy feed, its official allowlist, and short-lived lookup caches locally in Chrome.</p>
+
+  <h3>Data the extension does not inspect or transmit</h3>
+  <p>The extension does not analyse page text, images or other page content. It does not inspect form contents, passwords, authentication credentials, personal communications or keystrokes. It does not send URL paths or query strings to PhishDestroy, Cloudflare or FFraud.</p>
+
+  <h2>3. External services and sharing</h2>
+  <p>The extension shares only the data needed to provide its security checks:</p>
+  <ul>
+    <li><strong>PhishDestroy API:</strong> receives a website hostname when live PhishDestroy fallback is enabled and a live lookup is required.</li>
+    <li><strong>Cloudflare DNS-over-HTTPS:</strong> receives a website hostname when FFraud checking is enabled, so the hostname can be resolved to public server IP addresses.</li>
+    <li><strong>FFraud:</strong> receives resolved public server IP addresses when FFraud checking is enabled.</li>
+    <li><strong>GitHub:</strong> hosts the public PhishDestroy threat feed and official allowlist downloaded by the extension.</li>
+  </ul>
+  <p>Requests use HTTPS. Like other internet services, these providers necessarily receive connection information such as the user's public IP address and may derive an approximate region from it. Their own logging and retention practices are governed by their respective privacy policies and terms.</p>
+  <p>The extension publisher does not sell user data, use it for advertising, build advertising profiles, or transfer it for creditworthiness or lending decisions. Data is used or transferred only to provide and maintain the extension's stated security purpose, for security or abuse prevention, to comply with applicable law, or in another use permitted by Chrome Web Store policy.</p>
+
+  <h2>4. Local retention</h2>
+  <ul>
+    <li>PhishDestroy live lookup results are cached locally for up to six hours.</li>
+    <li>FFraud results are cached locally for up to 30 minutes.</li>
+    <li>The local block log retains only the 100 most recent blocked-page records.</li>
+    <li>The downloaded threat feed remains locally until it is replaced by a refresh, Chrome clears extension data, or the extension is removed.</li>
+    <li>Settings, allowlists, counters and feed metadata remain until changed, Chrome clears extension data, or the extension is removed.</li>
+  </ul>
+
+  <h2>5. User choices and control</h2>
+  <p>Users can disable all protection, disable live PhishDestroy fallback, disable FFraud checks, change thresholds, remove domains from the personal allowlist, or remove the extension. Disabling a live feature prevents the corresponding future live checks. Removing the extension clears its locally stored extension data through Chrome.</p>
+
+  <h2>6. Security</h2>
+  <p>All external requests made by the extension use HTTPS. The executable JavaScript is included in the installed extension package; the extension does not download and execute remote JavaScript or WebAssembly. No method of storage or transmission is completely risk-free, and the extension cannot guarantee that a malicious site will always be detected.</p>
+
+  <h2>7. Chrome Web Store Limited Use</h2>
+  <p>The use and transfer of information received from Chrome APIs adheres to the Chrome Web Store User Data Policy, including the Limited Use requirements. The extension uses browsing information only to provide its user-facing website-protection features.</p>
+
+  <h2>8. Changes to this policy</h2>
+  <p>This policy may be updated when the extension's functionality or data practices change. The effective date at the top of this page will be revised, and material changes will be disclosed as required.</p>
+
+  <h2>9. Contact</h2>
+  <p>Privacy questions may be sent through the publisher support channel displayed on the extension's Chrome Web Store listing.</p>
+</main>
+</body>
+</html>
